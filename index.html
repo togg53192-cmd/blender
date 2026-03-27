@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySphere • Premium Study Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="animated-bg" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+      <span class="grid-overlay"></span>
+    </div>
+
+    <header class="topbar glass">
+      <div>
+        <p class="eyebrow">STUDYSPHERE</p>
+        <h1>High-Performance Study Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <button id="focusModeBtn" class="ghost-btn">Focus Mode</button>
+        <div class="streak-card">
+          <span>🔥 Streak</span>
+          <strong id="streakCount">0 days</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="glass card timer-card">
+        <h2>Pomodoro Focus Timer</h2>
+        <p>Stay deep in flow with work and break cycles.</p>
+        <div class="timer-display" id="timerDisplay">25:00</div>
+        <div class="timer-controls">
+          <button id="startTimerBtn" class="primary-btn">Start</button>
+          <button id="pauseTimerBtn" class="secondary-btn">Pause</button>
+          <button id="resetTimerBtn" class="ghost-btn">Reset</button>
+        </div>
+        <div class="timer-presets">
+          <button class="chip" data-minutes="25">25m Focus</button>
+          <button class="chip" data-minutes="50">50m Deep Work</button>
+          <button class="chip" data-minutes="10">10m Quick Sprint</button>
+          <button class="chip" data-break="5">5m Break</button>
+        </div>
+      </section>
+
+      <section class="glass card">
+        <h2>Subjects & Goals</h2>
+        <form id="subjectForm" class="inline-form">
+          <input id="subjectInput" type="text" placeholder="Add subject (e.g. Calculus)" required />
+          <input id="subjectGoalInput" type="number" min="1" max="100" placeholder="Hours Goal" required />
+          <button type="submit" class="primary-btn">Add</button>
+        </form>
+        <ul id="subjectList" class="list"></ul>
+      </section>
+
+      <section class="glass card">
+        <h2>Study Session Room</h2>
+        <p>Create a code and let friends join your live study session.</p>
+        <div class="session-actions">
+          <button id="generateCodeBtn" class="primary-btn">Generate Session Code</button>
+          <span id="sessionCode" class="badge">No active code</span>
+        </div>
+        <form id="joinForm" class="inline-form two-col">
+          <input id="friendNameInput" type="text" placeholder="Friend name" required />
+          <input id="joinCodeInput" type="text" placeholder="Enter code" required />
+          <button class="secondary-btn" type="submit">Join Session</button>
+        </form>
+        <ul id="friendList" class="list"></ul>
+      </section>
+
+      <section class="glass card">
+        <h2>Task Planner</h2>
+        <form id="taskForm" class="inline-form">
+          <input id="taskInput" type="text" placeholder="Add a study task" required />
+          <select id="taskPriority">
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+          </select>
+          <button class="primary-btn" type="submit">Add Task</button>
+        </form>
+        <ul id="taskList" class="list"></ul>
+      </section>
+
+      <section class="glass card notes-card">
+        <h2>Quick Notes</h2>
+        <textarea id="notesArea" rows="7" placeholder="Write formulas, key ideas, revision plans..."></textarea>
+        <div class="session-actions">
+          <button id="saveNotesBtn" class="secondary-btn">Save Notes</button>
+          <small id="notesStatus">Autosave disabled</small>
+        </div>
+      </section>
+
+      <section class="glass card stats-card">
+        <h2>Progress Analytics</h2>
+        <div class="stats-grid">
+          <article>
+            <p>Total Focus Minutes</p>
+            <strong id="focusMinutes">0</strong>
+          </article>
+          <article>
+            <p>Completed Sessions</p>
+            <strong id="completedSessions">0</strong>
+          </article>
+          <article>
+            <p>Tasks Completed</p>
+            <strong id="completedTasks">0</strong>
+          </article>
+          <article>
+            <p>Active Friends</p>
+            <strong id="activeFriends">0</strong>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Designed for premium productivity • StudySphere</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
